@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme inline {
+  --fondo: #F4F4F4;
+  --primario: #0275d8;
+}
+
+.bg-fondo {
+  background-color: var(--fondo);
+}
+
+.bg-primario {
+  background-color: var(--primario);
+}

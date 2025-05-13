@@ -1,0 +1,1 @@
+<h1 align="center">TEMPLATE FOR THE NEWS PROJECTS</h1>
