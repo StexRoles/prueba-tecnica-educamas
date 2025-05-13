@@ -25,15 +25,17 @@ Este proyecto es una aplicación de autenticación de usuarios que incluye un ba
 1. Asegúrate de tener PostgreSQL instalado en tu sistema.
 2. Usa el archivo `database.sql` para crear la tabla necesaria en tu base de datos. 
 
-Configura las credenciales de tu base de datos en el archivo .env en la raíz del backend. Ejemplo:
+Configura las credenciales de tu base de datos en el archivo db.js en la carpeta config dentro de src . Ejemplo:
 
-DB_USER=postgres
-DB_HOST=localhost
-DB_NAME=autenticacion_usuarios
-DB_PASSWORD=tu_contraseña
-DB_PORT=5432
-JWT_SECRET=mi_clave_secreta_super_segura
-
+```bash
+   const pool = new Pool({
+  user: "postgres",
+  host: "localhost",
+  database: "autenticacion_usuarios",
+  password: "password",
+  port: 5432,
+});
+   ```
 ## 🚀 Ejecución del Proyecto
 
 ### Backend
