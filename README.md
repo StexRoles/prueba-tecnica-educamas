@@ -1,3 +1,6 @@
+# Evidencias visuales
+
+
 # Parte teorica
 1. ¿Qué es una API REST y su estructura?
 Una API REST es una forma de conectar aplicaciones usando peticiones HTTP. Su estructura sigue el modelo CRUD para interactuar con datos, y generalmente responde en formato JSON. Por ejemplo, una ruta como /api/users puede usarse para listar o crear usuarios dependiendo del método HTTP que se use.
@@ -71,3 +74,54 @@ Configura las credenciales de tu base de datos en el archivo db.js en la carpeta
    ```bash
    npm run dev
    ```
+
+## 📂 Estructura de Carpetas del Backend
+
+```plaintext
+backend/
+├── node_modules/         # Dependencias del proyecto
+├── public/               # Archivos públicos
+├── src/                  # Código fuente del backend
+│   ├── config/           # Configuración del proyecto
+│   │   └── db.js         # Configuración de la conexión a la base de datos
+│   ├── controllers/      # Controladores de las rutas
+│   │   └── authController.js # Lógica para registro e inicio de sesión
+│   ├── routers/          # Definición de rutas
+│   │   ├── auth.js       # Rutas relacionadas con autenticación
+│   │   └── app.js        # Configuración principal del servidor
+├── .env                  # Variables de entorno
+├── package.json          # Configuración del proyecto y dependencias
+├── package-lock.json     # Archivo de bloqueo de dependencias
+└── [README.md]  
+```
+
+## Endpoints del backend
+Base URL: http://localhost:3005/api
+1. Registro de Usuario
+URL: /auth/register
+Método: POST
+Descripción: Registra un nuevo usuario en la base de datos.
+
+2. Inicio de Sesión
+URL: /auth/login
+Método: POST
+Descripción: Autentica a un usuario y devuelve un token JWT.
+
+## flujo de datos
+1. Frontend
+
+El usuario interactúa con el formulario de registro o inicio de sesión.
+Los datos se envían al backend mediante solicitudes HTTP (POST).
+
+2. Backend
+
+Rutas (routers/auth.js): Reciben las solicitudes del frontend.
+Controladores (controllers/authController.js): Procesan la lógica de negocio, como verificar usuarios, encriptar contraseñas y generar tokens JWT.
+Base de Datos (config/db.js): Se conecta a PostgreSQL para almacenar o recuperar datos.
+
+3. Base de datos
+
+La tabla users almacena los datos de los usuarios, como name, email y password.
+Respuesta:
+
+El backend responde al frontend con un mensaje de éxito, error o un token JWT.
