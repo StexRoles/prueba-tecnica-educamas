@@ -1,6 +1,6 @@
 import { useState } from "react";
 import API from "../axiosConfig";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function Register() {
@@ -80,7 +80,7 @@ function Register() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              id="name"
+              id="name" required
               placeholder="Ingresa tu nombre"
               className="h-12 p-2 mb-4 w-4/5 border-2 border-gray-300 rounded-lg bg-gray-200 outline-none focus:border-blue-500"
             />
@@ -90,7 +90,7 @@ function Register() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              id="email"
+              id="email" required
               placeholder="Ingresa tu correo electrónico"
               className="h-12 p-2 mb-4 w-4/5 border-2 border-gray-300 rounded-lg bg-gray-200 outline-none focus:border-blue-500"
             />
@@ -100,17 +100,17 @@ function Register() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              id="password"
+              id="password" required
               placeholder="Ingresa tu contraseña"
               className="h-12 p-2 mb-4 w-4/5 border-2 border-gray-300 rounded-lg bg-gray-200 outline-none focus:border-blue-500"
             />
 
             <label htmlFor="confirmarContraseña" className="text-sm mb-1.5">Confirmar Contraseña</label>
             <input
-              type="password"
+              type="password" 
               value={confirmarContraseña}
               onChange={(e) => setConfirmarPassword(e.target.value)}
-              id="confirmarContraseña"
+              id="confirmarContraseña" required
               placeholder="Repite tu contraseña"
               className="h-12 p-2 mb-6 w-4/5 border-2 border-gray-300 rounded-lg bg-gray-200 outline-none focus:border-blue-500"
             />
@@ -122,6 +122,7 @@ function Register() {
               Registrarse
             </button>
           </form>
+          <Link to="/login" className="text-blue-600 mt-6">¿Tienes cuenta? Inicia sesión</Link>
         </section>
       </main>
     </>

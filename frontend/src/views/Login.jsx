@@ -72,7 +72,7 @@ function Login() {
               type="text"
               value={nombreusuario}
               onChange={(e) => setUsername(e.target.value)}
-              id="nombreusuario"
+              id="nombreusuario" required
               placeholder="Ingresa tu usuario"
               className="h-12 p-2 mb-6 w-4/5 border-2 border-gray-300 rounded-lg bg-gray-200 outline-none focus:border-blue-500"
             />
@@ -82,7 +82,7 @@ function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              id="password"
+              id="password" required
               placeholder="Ingresa tu contraseña"
               className="h-12 p-2 mb-6 w-4/5 border-2 border-gray-300 rounded-lg bg-gray-200 outline-none focus:border-blue-500"
             />
